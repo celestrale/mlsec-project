@@ -1,0 +1,1527 @@
+steps = 200
+eps = 8/255
+alpha = eps/2
+
+print(f"Starting point has label: {dataset_labels[y0.item()]}")
+models = [secml_model1, secml_model2, secml_model3]
+
+#test call auto_pgd
+x_adv, y_advs, attack_path = auto_pgd_linf_mult_untargeted(x0, y0, models, eps, alpha, steps, 0.75)
+for y_adv in y_advs:
+    print(f"Adversarial point has label: {dataset_labels[y_adv.item()]}")
+save_attack(x_adv, f"attack_image_{100}")
+
+
+Models :
+
+Lower robustness
+model1 = load_model(model_name='Ding2020MMA', dataset='cifar10', threat_model='Linf')
+secml_model1 = CClassifierPyTorch(model1, input_shape=(3,32,32), pretrained=True)
+model2 = load_model(model_name='Wong2020Fast', dataset='cifar10', threat_model='Linf')
+secml_model2 = CClassifierPyTorch(model2, input_shape=(3,32,32), pretrained=True)
+model3 = load_model(model_name='Andriushchenko2020Understanding', dataset='cifar10', threat_model='Linf')
+secml_model3 = CClassifierPyTorch(model3, input_shape=(3,32,32), pretrained=True)
+
+attack_number 0 on image 6710
+Starting point has label: cat
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: cat
+Adversarial point has label: cat
+Adversarial point has label: cat
+attack_number 1 on image 7066
+Starting point has label: frog
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: frog
+Adversarial point has label: cat
+Adversarial point has label: frog
+attack_number 2 on image 6283
+Starting point has label: cat
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: dog
+Adversarial point has label: deer
+Adversarial point has label: deer
+attack_number 3 on image 8182
+Starting point has label: ship
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: ship
+Adversarial point has label: ship
+Adversarial point has label: ship
+attack_number 4 on image 8072
+Starting point has label: cat
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: cat
+Adversarial point has label: truck
+Adversarial point has label: automobile
+attack_number 5 on image 8325
+Starting point has label: ship
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: bird
+Adversarial point has label: bird
+Adversarial point has label: bird
+attack_number 6 on image 9987
+Starting point has label: airplane
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: airplane
+Adversarial point has label: airplane
+Adversarial point has label: airplane
+attack_number 7 on image 2762
+Starting point has label: deer
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: horse
+Adversarial point has label: bird
+Adversarial point has label: bird
+attack_number 8 on image 1610
+Starting point has label: bird
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: airplane
+Adversarial point has label: airplane
+Adversarial point has label: ship
+attack_number 9 on image 490
+Starting point has label: automobile
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: automobile
+Adversarial point has label: automobile
+Adversarial point has label: automobile
+attack_number 10 on image 2850
+Starting point has label: dog
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: dog
+Adversarial point has label: dog
+Adversarial point has label: dog
+attack_number 11 on image 6326
+Starting point has label: horse
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: frog
+Adversarial point has label: deer
+Adversarial point has label: deer
+attack_number 12 on image 4984
+Starting point has label: horse
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: cat
+Adversarial point has label: cat
+Adversarial point has label: truck
+attack_number 13 on image 7494
+Starting point has label: bird
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: frog
+Adversarial point has label: deer
+Adversarial point has label: deer
+attack_number 14 on image 7180
+Starting point has label: frog
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: frog
+Adversarial point has label: frog
+Adversarial point has label: frog
+attack_number 15 on image 3212
+Starting point has label: frog
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: frog
+Adversarial point has label: frog
+Adversarial point has label: frog
+attack_number 16 on image 5523
+Starting point has label: frog
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: frog
+Adversarial point has label: frog
+Adversarial point has label: frog
+attack_number 17 on image 66
+Starting point has label: automobile
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: airplane
+Adversarial point has label: bird
+Adversarial point has label: ship
+attack_number 18 on image 626
+Starting point has label: truck
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: truck
+Adversarial point has label: truck
+Adversarial point has label: truck
+attack_number 19 on image 6826
+Starting point has label: frog
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: deer
+Adversarial point has label: frog
+Adversarial point has label: frog
+attack_number 20 on image 7588
+Starting point has label: bird
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: bird
+Adversarial point has label: cat
+Adversarial point has label: cat
+attack_number 21 on image 5702
+Starting point has label: deer
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: horse
+Adversarial point has label: deer
+Adversarial point has label: deer
+attack_number 22 on image 1729
+Starting point has label: ship
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: ship
+Adversarial point has label: ship
+Adversarial point has label: ship
+attack_number 23 on image 308
+Starting point has label: automobile
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: automobile
+Adversarial point has label: truck
+Adversarial point has label: truck
+attack_number 24 on image 2164
+Starting point has label: automobile
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: automobile
+Adversarial point has label: automobile
+Adversarial point has label: automobile
+attack_number 25 on image 4580
+Starting point has label: frog
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: frog
+Adversarial point has label: deer
+Adversarial point has label: deer
+attack_number 26 on image 6688
+Starting point has label: automobile
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: cat
+Adversarial point has label: bird
+Adversarial point has label: airplane
+attack_number 27 on image 5944
+Starting point has label: bird
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: dog
+Adversarial point has label: frog
+Adversarial point has label: deer
+attack_number 28 on image 6816
+Starting point has label: automobile
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: ship
+Adversarial point has label: automobile
+Adversarial point has label: ship
+attack_number 29 on image 8265
+Starting point has label: airplane
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: ship
+Adversarial point has label: airplane
+Adversarial point has label: ship
+attack_number 30 on image 798
+Starting point has label: horse
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: horse
+Adversarial point has label: horse
+Adversarial point has label: frog
+attack_number 31 on image 4106
+Starting point has label: cat
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: ship
+Adversarial point has label: airplane
+Adversarial point has label: airplane
+attack_number 32 on image 1147
+Starting point has label: frog
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: truck
+Adversarial point has label: automobile
+Adversarial point has label: automobile
+attack_number 33 on image 2265
+Starting point has label: ship
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: ship
+Adversarial point has label: ship
+Adversarial point has label: ship
+attack_number 34 on image 2296
+Starting point has label: truck
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: truck
+Adversarial point has label: truck
+Adversarial point has label: truck
+attack_number 35 on image 837
+Starting point has label: bird
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: deer
+Adversarial point has label: bird
+Adversarial point has label: bird
+attack_number 36 on image 2765
+Starting point has label: truck
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: ship
+Adversarial point has label: truck
+Adversarial point has label: truck
+attack_number 37 on image 2415
+Starting point has label: frog
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: frog
+Adversarial point has label: cat
+Adversarial point has label: cat
+attack_number 38 on image 9688
+Starting point has label: bird
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: ship
+Adversarial point has label: cat
+Adversarial point has label: bird
+attack_number 39 on image 5432
+Starting point has label: truck
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: truck
+Adversarial point has label: truck
+Adversarial point has label: truck
+attack_number 40 on image 2803
+Starting point has label: dog
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: dog
+Adversarial point has label: dog
+Adversarial point has label: dog
+attack_number 41 on image 3894
+Starting point has label: horse
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: horse
+Adversarial point has label: horse
+Adversarial point has label: horse
+attack_number 42 on image 2160
+Starting point has label: airplane
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: ship
+Adversarial point has label: ship
+Adversarial point has label: ship
+attack_number 43 on image 645
+Starting point has label: automobile
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: automobile
+Adversarial point has label: truck
+Adversarial point has label: truck
+attack_number 44 on image 5649
+Starting point has label: airplane
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: airplane
+Adversarial point has label: frog
+Adversarial point has label: frog
+attack_number 45 on image 8368
+Starting point has label: frog
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: frog
+Adversarial point has label: deer
+Adversarial point has label: deer
+attack_number 46 on image 892
+Starting point has label: horse
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: horse
+Adversarial point has label: horse
+Adversarial point has label: horse
+attack_number 47 on image 3219
+Starting point has label: airplane
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: frog
+Adversarial point has label: frog
+Adversarial point has label: airplane
+attack_number 48 on image 9944
+Starting point has label: horse
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: horse
+Adversarial point has label: horse
+Adversarial point has label: horse
+attack_number 49 on image 2378
+Starting point has label: automobile
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: ship
+Adversarial point has label: automobile
+Adversarial point has label: automobile
+attack_number 50 on image 8110
+Starting point has label: dog
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: frog
+Adversarial point has label: frog
+Adversarial point has label: frog
+attack_number 51 on image 9235
+Starting point has label: airplane
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: airplane
+Adversarial point has label: airplane
+Adversarial point has label: airplane
+attack_number 52 on image 7295
+Starting point has label: dog
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: dog
+Adversarial point has label: dog
+Adversarial point has label: dog
+attack_number 53 on image 9688
+Starting point has label: bird
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: ship
+Adversarial point has label: cat
+Adversarial point has label: bird
+attack_number 54 on image 6911
+Starting point has label: frog
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: frog
+Adversarial point has label: frog
+Adversarial point has label: frog
+attack_number 55 on image 4308
+Starting point has label: airplane
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: cat
+Adversarial point has label: airplane
+Adversarial point has label: airplane
+attack_number 56 on image 4383
+Starting point has label: deer
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: frog
+Adversarial point has label: frog
+Adversarial point has label: frog
+attack_number 57 on image 688
+Starting point has label: cat
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: frog
+Adversarial point has label: frog
+Adversarial point has label: frog
+attack_number 58 on image 4216
+Starting point has label: airplane
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: airplane
+Adversarial point has label: airplane
+Adversarial point has label: airplane
+attack_number 59 on image 5603
+Starting point has label: dog
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: frog
+Adversarial point has label: frog
+Adversarial point has label: frog
+attack_number 60 on image 440
+Starting point has label: automobile
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: automobile
+Adversarial point has label: automobile
+Adversarial point has label: automobile
+attack_number 61 on image 1944
+Starting point has label: deer
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: horse
+Adversarial point has label: horse
+Adversarial point has label: frog
+attack_number 62 on image 1360
+Starting point has label: horse
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: horse
+Adversarial point has label: horse
+Adversarial point has label: horse
+attack_number 63 on image 4994
+Starting point has label: horse
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: horse
+Adversarial point has label: horse
+Adversarial point has label: horse
+attack_number 64 on image 6443
+Starting point has label: frog
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: frog
+Adversarial point has label: frog
+Adversarial point has label: frog
+attack_number 65 on image 8966
+Starting point has label: cat
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: dog
+Adversarial point has label: frog
+Adversarial point has label: dog
+attack_number 66 on image 2288
+Starting point has label: dog
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: deer
+Adversarial point has label: deer
+Adversarial point has label: deer
+attack_number 67 on image 6890
+Starting point has label: dog
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: dog
+Adversarial point has label: frog
+Adversarial point has label: frog
+attack_number 68 on image 4221
+Starting point has label: bird
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: bird
+Adversarial point has label: deer
+Adversarial point has label: bird
+attack_number 69 on image 370
+Starting point has label: deer
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: frog
+Adversarial point has label: bird
+Adversarial point has label: bird
+attack_number 70 on image 4093
+Starting point has label: cat
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: dog
+Adversarial point has label: horse
+Adversarial point has label: horse
+attack_number 71 on image 8084
+Starting point has label: dog
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: cat
+Adversarial point has label: cat
+Adversarial point has label: cat
+attack_number 72 on image 6324
+Starting point has label: horse
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: horse
+Adversarial point has label: horse
+Adversarial point has label: horse
+attack_number 73 on image 3771
+Starting point has label: bird
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: airplane
+Adversarial point has label: airplane
+Adversarial point has label: airplane
+attack_number 74 on image 6626
+Starting point has label: bird
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: bird
+Adversarial point has label: deer
+Adversarial point has label: horse
+attack_number 75 on image 2159
+Starting point has label: ship
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: dog
+Adversarial point has label: dog
+Adversarial point has label: horse
+attack_number 76 on image 233
+Starting point has label: ship
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: automobile
+Adversarial point has label: ship
+Adversarial point has label: automobile
+attack_number 77 on image 9436
+Starting point has label: automobile
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: dog
+Adversarial point has label: dog
+Adversarial point has label: frog
+attack_number 78 on image 4699
+Starting point has label: dog
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: bird
+Adversarial point has label: bird
+Adversarial point has label: bird
+attack_number 79 on image 6524
+Starting point has label: ship
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: airplane
+Adversarial point has label: airplane
+Adversarial point has label: airplane
+attack_number 80 on image 7731
+Starting point has label: automobile
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: automobile
+Adversarial point has label: automobile
+Adversarial point has label: automobile
+attack_number 81 on image 2592
+Starting point has label: bird
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: dog
+Adversarial point has label: dog
+Adversarial point has label: dog
+attack_number 82 on image 8301
+Starting point has label: dog
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: horse
+Adversarial point has label: horse
+Adversarial point has label: horse
+attack_number 83 on image 9535
+Starting point has label: automobile
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: bird
+Adversarial point has label: truck
+Adversarial point has label: truck
+attack_number 84 on image 9021
+Starting point has label: airplane
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: airplane
+Adversarial point has label: airplane
+Adversarial point has label: airplane
+attack_number 85 on image 8681
+Starting point has label: bird
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: frog
+Adversarial point has label: frog
+Adversarial point has label: frog
+attack_number 86 on image 6242
+Starting point has label: deer
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: bird
+Adversarial point has label: airplane
+Adversarial point has label: airplane
+attack_number 87 on image 5048
+Starting point has label: automobile
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: truck
+Adversarial point has label: truck
+Adversarial point has label: truck
+attack_number 88 on image 8396
+Starting point has label: cat
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: ship
+Adversarial point has label: bird
+Adversarial point has label: bird
+attack_number 89 on image 7298
+Starting point has label: deer
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: bird
+Adversarial point has label: bird
+Adversarial point has label: bird
+attack_number 90 on image 5744
+Starting point has label: bird
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: bird
+Adversarial point has label: bird
+Adversarial point has label: bird
+attack_number 91 on image 2648
+Starting point has label: deer
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: dog
+Adversarial point has label: deer
+Adversarial point has label: deer
+attack_number 92 on image 5571
+Starting point has label: airplane
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: horse
+Adversarial point has label: horse
+Adversarial point has label: horse
+attack_number 93 on image 1381
+Starting point has label: frog
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: frog
+Adversarial point has label: airplane
+Adversarial point has label: airplane
+attack_number 94 on image 4123
+Starting point has label: airplane
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: airplane
+Adversarial point has label: airplane
+Adversarial point has label: airplane
+attack_number 95 on image 3136
+Starting point has label: deer
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: frog
+Adversarial point has label: deer
+Adversarial point has label: deer
+attack_number 96 on image 6950
+Starting point has label: ship
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: airplane
+Adversarial point has label: airplane
+Adversarial point has label: airplane
+attack_number 97 on image 248
+Starting point has label: bird
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: bird
+Adversarial point has label: bird
+Adversarial point has label: bird
+attack_number 98 on image 9873
+Starting point has label: bird
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: ship
+Adversarial point has label: truck
+Adversarial point has label: truck
+attack_number 99 on image 1398
+Starting point has label: horse
+0.0 %
+10.0 %
+20.0 %
+30.0 %
+40.0 %
+50.0 %
+60.0 %
+70.0 %
+80.0 %
+90.0 %
+Adversarial point has label: horse
+Adversarial point has label: horse
+Adversarial point has label: horse
+statistic over 99 attacks: 0.3939393939393939
+sucess: 39
+failure: 61
